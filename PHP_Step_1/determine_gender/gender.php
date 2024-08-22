@@ -1,9 +1,13 @@
 <?php
-function detGender($input)
+function detGender($username)
 {
-
+    $uniqueChars = count(array_unique(str_split($username)));
+    if ($uniqueChars % 2 == 0) {
+        return "Girl!";
+    } else {
+        return "Boy!";
+    }
 }
-
 function randomName($letters = 'abcdefghijklmnopqrstuvwxyz')
 {
     $length = rand(10, 100);
@@ -15,8 +19,7 @@ function randomName($letters = 'abcdefghijklmnopqrstuvwxyz')
 }
 
 
-
-
+print_r(detGender(randomName()));
 
 
 
