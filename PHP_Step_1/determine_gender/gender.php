@@ -1,4 +1,5 @@
 <?php
+//По никнейму определить пол собеседника
 function detGender($username)
 {
     $uniqueChars = count(array_unique(str_split($username)));

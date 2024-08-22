@@ -1,4 +1,5 @@
 <?php
+//Реализовать алгоритм сортировки массива. Символы.
 function bubbleSort(&$array) {
     $n = count($array);
     for ($i = 0; $i < $n; $i++) {
