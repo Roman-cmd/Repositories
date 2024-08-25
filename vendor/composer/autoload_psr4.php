@@ -6,4 +6,5 @@ $vendorDir = dirname(__DIR__);
 $baseDir = dirname($vendorDir);
 
 return array(
+    'PrintText\\' => array($baseDir . '/php_step_2_oop/printText'),
 );

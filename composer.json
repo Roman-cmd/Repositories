@@ -1,2 +1,7 @@
 {
+  "autoload": {
+    "psr-4": {
+      "PrintText\\": "php_step_2_oop/printText/"
+    }
+  }
 }

@@ -1,6 +1,6 @@
 <?php
 //Реализовать алгоритм сортировки массива. Числа.
-function arrSort($arr)
+function numberSort($arr)
 {
     do{
 
@@ -18,6 +18,6 @@ function arrSort($arr)
     }while($counter);
     return $arr;
 }
-print_r(arrSort([1, 3, 2, 7, 4, 8]));
+print_r(numberSort([1, 3, 2, 7, 4, 8]));
 
 
