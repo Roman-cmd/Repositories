@@ -11,12 +11,30 @@ class ComposerStaticInitd751713988987e9331980363e24189ce
         array (
             'PrintText\\' => 10,
         ),
+        'A' => 
+        array (
+            'AnimalFactory\\' => 14,
+            'AnimalFactoryManagement\\' => 24,
+            'AnimalFactoryCage\\' => 18,
+        ),
     );
 
     public static $prefixDirsPsr4 = array (
         'PrintText\\' => 
         array (
             0 => __DIR__ . '/../..' . '/php_step_2_oop/printText',
+        ),
+        'AnimalFactory\\' => 
+        array (
+            0 => __DIR__ . '/../..' . '/php_step_2_oop/animal_factory',
+        ),
+        'AnimalFactoryManagement\\' => 
+        array (
+            0 => __DIR__ . '/../..' . '/php_step_2_oop/animal_factory/management',
+        ),
+        'AnimalFactoryCage\\' => 
+        array (
+            0 => __DIR__ . '/../..' . '/php_step_2_oop/animal_factory/cage',
         ),
     );
 

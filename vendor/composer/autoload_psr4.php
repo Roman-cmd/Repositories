@@ -7,4 +7,7 @@ $baseDir = dirname($vendorDir);
 
 return array(
     'PrintText\\' => array($baseDir . '/php_step_2_oop/printText'),
+    'AnimalFactory\\' => array($baseDir . '/php_step_2_oop/animal_factory'),
+    'AnimalFactoryManagement\\' => array($baseDir . '/php_step_2_oop/animal_factory/management'),
+    'AnimalFactoryCage\\' => array($baseDir . '/php_step_2_oop/animal_factory/cage'),
 );
