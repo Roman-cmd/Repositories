@@ -4,7 +4,7 @@ namespace PrintText;
 
 abstract class ViewText
 {
-    public string $text;
+    protected string $text;
 
     /**
      * @param string $text
