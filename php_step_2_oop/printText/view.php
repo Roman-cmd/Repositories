@@ -1,5 +1,5 @@
 <?php
-require_once ('../vendor/autoload.php');
+require_once('../../vendor/autoload.php');
 
 $textPrinter = new \PrintText\Printer("Я принтер");
 $textScreen = new \PrintText\Screen("Я экран");

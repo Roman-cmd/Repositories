@@ -24,7 +24,7 @@ abstract class ViewText
         $this->text = $text;
     }
 
-    public function message() : void
+    public function message(): void
     {
         print_r("$this->text\n");
     }

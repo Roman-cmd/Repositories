@@ -4,10 +4,10 @@ namespace AnimalFactory;
 
 abstract class BaseAnimal
 {
-    protected $kingdom;
-    protected $legs;
-    protected $tails;
-    protected $wings;
+    protected string $kingdom;
+    protected int $legs;
+    protected int $tails;
+    protected int $wings;
 
     /**
      * @param $kingdom
@@ -25,7 +25,7 @@ abstract class BaseAnimal
 
     public function getProperties()
     {
-        return[
+        return [
             'kingdom' => $this->kingdom,
             'legs' => $this->legs,
             'tails' => $this->tails,
