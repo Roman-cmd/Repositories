@@ -4,9 +4,9 @@ namespace AnimalFactory\cage;
 
 use AnimalFactory\BaseAnimal;
 
-class BirdCage extends BaseAnimal
+class Bird extends BaseAnimal
 {
-    public function __construct($legs, $tails, $wings)
+    public function __construct(int $legs, int $tails, int $wings)
     {
         parent::__construct('Bird', $legs, $tails, $wings);
     }

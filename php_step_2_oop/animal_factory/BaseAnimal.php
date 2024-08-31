@@ -1,5 +1,5 @@
 <?php
-
+declare(strict_types = 1);
 namespace AnimalFactory;
 
 abstract class BaseAnimal
@@ -15,7 +15,7 @@ abstract class BaseAnimal
      * @param $tails
      * @param $wings
      */
-    public function __construct($kingdom, $legs, $tails, $wings)
+    public function __construct(string $kingdom, int $legs, int $tails, int $wings)
     {
         $this->kingdom = $kingdom;
         $this->legs = $legs;
@@ -23,7 +23,7 @@ abstract class BaseAnimal
         $this->wings = $wings;
     }
 
-    public function getProperties()
+    public function getProperties() : array
     {
         return [
             'kingdom' => $this->kingdom,
@@ -32,6 +32,4 @@ abstract class BaseAnimal
             'wings' => $this->wings
         ];
     }
-
-
 }
