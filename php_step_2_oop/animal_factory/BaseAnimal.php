@@ -32,4 +32,13 @@ abstract class BaseAnimal
             'wings' => $this->wings
         ];
     }
+    public function __toString()
+    {
+        return
+            "Царство: $this->kingdom\n".
+            "Количество лап: $this->legs\n".
+            "Количество хвостов: $this->tails\n".
+            "Количество крыльев: $this->wings";
+
+    }
 }
