@@ -9,7 +9,7 @@ class ListProduct
     {
         $this->masses = $masses;
     }
-    function countSimilarPairs() : int|float
+    function countSimilarPairs() : int
     {
         $massCount = [];// Создаем массив для подсчета количества товаров с одинаковой массой
         $totalPairs = 0;//Переменная для подсчета количества пар.
