@@ -35,3 +35,28 @@ for (int r=0; r<n; ++r) {
     ans = max (ans, sum - min_sum);
     min_sum = min (min_sum, sum);
 }*/
+/*И еще одно из решений
+
+$line = trim(fgets(STDIN));
+$nums = explode(' ', $line);
+
+$numsCount = count($nums);
+
+$maxSumCurrent = $nums[0];
+$maxSumTotal = $nums[0];
+
+for ($i = 1; $i < $numsCount; $i++) {
+    $num = $nums[$i];
+
+    $maxSumCurrent += $num;
+
+    if ($maxSumCurrent < $num) {
+        $maxSumCurrent = $num;
+    }
+
+    if ($maxSumCurrent > $maxSumTotal) {
+        $maxSumTotal = $maxSumCurrent;
+    }
+}
+
+echo $maxSumTotal;*/
