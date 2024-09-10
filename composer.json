@@ -3,8 +3,7 @@
     "psr-4": {
       "PrintText\\": "php_step_2_oop/printText/",
       "AnimalFactory\\": "php_step_2_oop/animal_factory/",
-      "AnimalFactoryCage\\": "php_step_2_oop/animal_factory/cage/",
-      "AnimalFactoryManagement\\": "php_step_2_oop/animal_factory/management/"
+      "AnimalFactory\\cage": "php_step_2_oop/animal_factory/cage"
     }
   }
 }

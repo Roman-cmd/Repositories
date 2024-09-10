@@ -1,8 +1,6 @@
 <?php
 
-namespace AnimalFactory\cage;
-
-use AnimalFactory\BaseAnimal;
+namespace AnimalFactory\animal;
 
 class Bird extends BaseAnimal
 {
