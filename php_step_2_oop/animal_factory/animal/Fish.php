@@ -2,11 +2,16 @@
 
 namespace AnimalFactory\animal;
 
-class Fish extends BaseAnimal
+class Fish
 {
-    public function __construct(int $legs, int $tails, int $wings)
+    protected array $data = [];
+    public function setAnimal(string $name, int $fairy) : void
     {
-        parent::__construct('Рыбы', 0, $tails, 0);
+        $this->data = [
+            $name => ['Хвостов' => $fairy]
+        ];
     }
+
+
 
 }

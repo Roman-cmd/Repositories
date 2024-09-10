@@ -2,10 +2,17 @@
 
 namespace AnimalFactory\animal;
 
-class Bird extends BaseAnimal
+class Bird
 {
-    public function __construct(int $legs, int $tails, int $wings)
+    protected array $data = [];
+    public function setAnimal(string $name, int $legs, int $fairy, int $wings) : void
     {
-        parent::__construct('Птицы', $legs, $tails, $wings);
+        $this->data = [
+            $name => ['Ног' => $legs,
+                      'Хвостов' => $fairy,
+                      'Крыльев' => $wings]
+        ];
     }
+
+
 }

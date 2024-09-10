@@ -19,4 +19,10 @@ class Beast
     {
         return $this->data;
     }
+
+
 }
+
+$animal = new Beast();
+$animal->setAnimal('Кот', 4,1);
+print_r($animal->getAnimal());

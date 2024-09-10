@@ -5,7 +5,7 @@ use AnimalFactory\animal\Beast;
 require_once('../../../vendor/autoload.php');
 class BeastCage extends Enclosure
 {
-    public array $beasts = [];
+
 
     public function __construct(string $kingdom = 'Звери')
     {
@@ -27,18 +27,3 @@ class BeastCage extends Enclosure
         return $this->beasts;
     }
 }
-
-$beastCage = new BeastCage();
-
-$beast1 = new Beast();
-$beast1->setAnimal('Лев', 4, 1);
-
-$beast2 = new Beast();
-$beast2->setAnimal('Птица', 2, 1);
-
-$beastCage->setBeast($beast1);
-$beastCage->setBeast($beast2);
-
-$allBeasts = $beastCage->getBeasts();
-
-print_r($allBeasts);
