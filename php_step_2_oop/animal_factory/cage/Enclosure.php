@@ -4,7 +4,7 @@ namespace AnimalFactory\cage;
 
 class Enclosure
 {
-    protected string $kingdom;
+    public string $kingdom;
     protected array $beasts = [];
     protected array $bird = [];
     protected array $fish = [];
