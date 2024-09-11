@@ -1,12 +1,10 @@
 <?php
 
 namespace AnimalFactory\animal;
+require_once "../../../vendor/autoload.php";
 
-
-class Beast
+class Beast extends BaseAnimal
 {
-    public array $data = [];
-
     public function setAnimal(string $name, int $legs, int $fairy) : void
     {
         $this->data = [
@@ -14,15 +12,4 @@ class Beast
                       'Хвостов' => $fairy]
         ];
     }
-
-    public function getAnimal(): array
-    {
-        return $this->data;
-    }
-
-
 }
-
-$animal = new Beast();
-$animal->setAnimal('Кот', 4,1);
-print_r($animal->getAnimal());

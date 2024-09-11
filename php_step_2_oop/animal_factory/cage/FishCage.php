@@ -1,31 +1,34 @@
 <?php
 
 namespace AnimalFactory\cage;
-
 use AnimalFactory\animal\Fish;
+require_once('../../../vendor/autoload.php');
 
 class FishCage extends Enclosure
 {
-    public array $beasts = [];
-
     public function __construct(string $kingdom = 'Рыбы')
     {
         parent::__construct($kingdom);
-        $this->beasts[$this->kingdom] = [];
+        $this->fish[$this->kingdom] = [];
     }
 
-    public function setBeast(Fish $beast): void
+    public function setFish(Fish $fish): void
     {
         // Извлекаем данные из массива, возвращаемого getAnimal()
-        $this->beasts[$this->kingdom] = array_merge(
-            $this->beasts[$this->kingdom],
-            $beast->getAnimal()
+        $this->fish[$this->kingdom] = array_merge(
+            $this->fish[$this->kingdom],
+            $fish->getAnimal()
         );
     }
 
-    public function getBeasts(): array
+    public function getFish(): array
     {
-        return $this->beasts;
+        return $this->fish;
     }
 
 }
+$fish = new Fish();
+$fish->setAnimal('Сельдь', 1);
+$animal = new FishCage();
+$animal->setFish($fish);
+print_r($animal->getFish());

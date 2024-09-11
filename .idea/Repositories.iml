@@ -2,9 +2,9 @@
 <module type="WEB_MODULE" version="4">
   <component name="NewModuleRootManager">
     <content url="file://$MODULE_DIR$">
-      <sourceFolder url="file://$MODULE_DIR$/php_step_2_oop/animal_factory" isTestSource="false" packagePrefix="AnimalFactory\" />
       <sourceFolder url="file://$MODULE_DIR$/php_step_2_oop/animal_factory/cage" isTestSource="false" packagePrefix="AnimalFactory\cage" />
       <sourceFolder url="file://$MODULE_DIR$/php_step_2_oop/printText" isTestSource="false" packagePrefix="PrintText\" />
+      <sourceFolder url="file://$MODULE_DIR$/php_step_2_oop/animal_factory/animal" isTestSource="false" packagePrefix="AnimalFactory\animal" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/composer" />
     </content>
     <orderEntry type="inheritedJdk" />

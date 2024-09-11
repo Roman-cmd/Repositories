@@ -1,31 +1,30 @@
 <?php
 
 namespace AnimalFactory\cage;
-
 use AnimalFactory\animal\Bird;
+require_once('../../../vendor/autoload.php');
 
 class BirdCage extends Enclosure
 {
-    public array $beasts = [];
+
 
     public function __construct(string $kingdom = 'Птицы')
     {
         parent::__construct($kingdom);
-        $this->beasts[$this->kingdom] = [];
+        $this->bird[$this->kingdom] = [];
     }
 
-    public function setBeast(Bird $beast): void
+    public function setBird(Bird $bird): void
     {
-        // Извлекаем данные из массива, возвращаемого getAnimal()
-        $this->beasts[$this->kingdom] = array_merge(
-            $this->beasts[$this->kingdom],
-            $beast->getAnimal()
+        $this->bird[$this->kingdom] = array_merge(
+            $this->bird[$this->kingdom],
+            $bird->getAnimal()
         );
     }
 
-    public function getBeasts(): array
+    public function getBird(): array
     {
-        return $this->beasts;
+        return $this->bird;
     }
 
 }

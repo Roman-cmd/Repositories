@@ -1,10 +1,10 @@
 <?php
 
 namespace AnimalFactory\animal;
+require_once "../../../vendor/autoload.php";
 
-class Bird
+class Bird extends BaseAnimal
 {
-    protected array $data = [];
     public function setAnimal(string $name, int $legs, int $fairy, int $wings) : void
     {
         $this->data = [
@@ -13,6 +13,4 @@ class Bird
                       'Крыльев' => $wings]
         ];
     }
-
-
 }
