@@ -1,5 +1,6 @@
 <?php
 namespace AnimalFactory\zookeeper;
+use AnimalFactory\animal\BaseAnimal;
 use AnimalFactory\animal\Beast;
 use AnimalFactory\animal\Bird;
 use AnimalFactory\animal\Fish;
@@ -23,13 +24,29 @@ class ZooKeeper
         $this->fish->setFish(new Fish());
         $this->bird = new BirdCage();
         $this->bird->setBird(new Bird());
+    }
 
+    public function addAnimal(BaseAnimal $animal, string $key): void
+    {
+        switch ($key) {
+            case 'Звери':
+                $this->beast->setBeast($animal);
+                break;
+            case 'Рыбы':
+                $this->fish->setFish($animal);
+                break;
+            case 'Птицы':
+                $this->beast->setBeast($animal);
+                break;
+            default:
+                echo "Указанной клетки нет!!!";
+                break;
+        }
         $this->factory['Фабрика'] = array_merge(
             $this->factory['Фабрика'],
             $this->beast->getBeasts(),
-             $this->fish->getFish(),
-             $this->bird->getBird());
-
+            $this->fish->getFish(),
+            $this->bird->getBird());
     }
 
     /**
@@ -42,4 +59,10 @@ class ZooKeeper
 }
 
 $parampant = new ZooKeeper();
+$cat = new Beast();
+$cat->setParamAnimal('Cat',4,1);
+$fish = new Fish();
+$fish->setParamAnimal('Селедка', 1);
+$parampant->addAnimal($cat,'Звери');
+$parampant->addAnimal($fish, 'Рыбы');
 print_r($parampant->getFactory());
