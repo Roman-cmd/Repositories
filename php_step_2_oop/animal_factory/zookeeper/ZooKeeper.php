@@ -60,9 +60,12 @@ class ZooKeeper
 
 $parampant = new ZooKeeper();
 $cat = new Beast();
+$dog = new Beast();
 $cat->setParamAnimal('Cat',4,1);
+$dog->setParamAnimal('Бобик', 4, 1);
 $fish = new Fish();
 $fish->setParamAnimal('Селедка', 1);
 $parampant->addAnimal($cat,'Звери');
+$parampant->addAnimal($dog,'Звери');
 $parampant->addAnimal($fish, 'Рыбы');
 print_r($parampant->getFactory());
