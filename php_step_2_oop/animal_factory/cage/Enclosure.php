@@ -14,4 +14,5 @@ class Enclosure
         $this->kingdom = $kingdom;
     }
 
+
 }

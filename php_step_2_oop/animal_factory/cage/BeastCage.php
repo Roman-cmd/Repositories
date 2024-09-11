@@ -18,7 +18,7 @@ class BeastCage extends Enclosure
         // Извлекаем данные из массива, возвращаемого getAnimal()
         $this->beasts[$this->kingdom] = array_merge(
             $this->beasts[$this->kingdom],
-            $beast->getAnimal()
+            $beast->getParamAnimal()
         );
     }
 

@@ -5,7 +5,7 @@ require_once "../../../vendor/autoload.php";
 
 class Fish extends BaseAnimal
 {
-    public function setAnimal(string $name, int $fairy) : void
+    public function setParamAnimal(string $name, int $fairy) : void
     {
         $this->data = [
             $name => ['Хвостов' => $fairy]

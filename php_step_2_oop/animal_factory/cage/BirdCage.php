@@ -18,7 +18,7 @@ class BirdCage extends Enclosure
     {
         $this->bird[$this->kingdom] = array_merge(
             $this->bird[$this->kingdom],
-            $bird->getAnimal()
+            $bird->getParamAnimal()
         );
     }
 

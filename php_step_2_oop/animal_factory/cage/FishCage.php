@@ -17,7 +17,7 @@ class FishCage extends Enclosure
         // Извлекаем данные из массива, возвращаемого getAnimal()
         $this->fish[$this->kingdom] = array_merge(
             $this->fish[$this->kingdom],
-            $fish->getAnimal()
+            $fish->getParamAnimal()
         );
     }
 
@@ -27,8 +27,3 @@ class FishCage extends Enclosure
     }
 
 }
-$fish = new Fish();
-$fish->setAnimal('Сельдь', 1);
-$animal = new FishCage();
-$animal->setFish($fish);
-print_r($animal->getFish());
