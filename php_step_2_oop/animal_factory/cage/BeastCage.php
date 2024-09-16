@@ -1,11 +1,12 @@
 <?php
 
 namespace AnimalFactory\cage;
+
 use AnimalFactory\animal\Beast;
-require_once('../../../vendor/autoload.php');
+
 class BeastCage extends Enclosure
 {
-
+    protected array $beasts = [];
 
     public function __construct(string $kingdom = 'Звери')
     {
@@ -15,14 +16,13 @@ class BeastCage extends Enclosure
 
     public function setBeast(Beast $beast): void
     {
-        // Извлекаем данные из массива, возвращаемого getAnimal()
         $this->beasts[$this->kingdom] = array_merge(
             $this->beasts[$this->kingdom],
             $beast->getParamAnimal()
         );
     }
 
-    public function getBeasts(): array
+    public function getBeast(): array
     {
         return $this->beasts;
     }

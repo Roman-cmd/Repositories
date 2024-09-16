@@ -1,5 +1,7 @@
 <?php
+
 namespace AnimalFactory\zookeeper;
+
 use AnimalFactory\animal\BaseAnimal;
 use AnimalFactory\animal\Beast;
 use AnimalFactory\animal\Bird;
@@ -7,7 +9,7 @@ use AnimalFactory\animal\Fish;
 use AnimalFactory\cage\BirdCage;
 use AnimalFactory\cage\BeastCage;
 use AnimalFactory\cage\FishCage;
-require_once "../../../vendor/autoload.php";
+
 class ZooKeeper
 {
     public array $factory = [];
@@ -26,17 +28,22 @@ class ZooKeeper
         $this->bird->setBird(new Bird());
     }
 
-    public function addAnimal(BaseAnimal $animal, string $key): void
+    /**
+     * @param BaseAnimal $fauna
+     * @param string $key
+     * @return void
+     */
+    public function addAnimal(BaseAnimal $fauna, string $key): void
     {
         switch ($key) {
             case 'Звери':
-                $this->beast->setBeast($animal);
+                $this->beast->setBeast($fauna);
                 break;
             case 'Рыбы':
-                $this->fish->setFish($animal);
+                $this->fish->setFish($fauna);
                 break;
             case 'Птицы':
-                $this->beast->setBeast($animal);
+                $this->bird->setBird($fauna);
                 break;
             default:
                 echo "Указанной клетки нет!!!";
@@ -44,28 +51,57 @@ class ZooKeeper
         }
         $this->factory['Фабрика'] = array_merge(
             $this->factory['Фабрика'],
-            $this->beast->getBeasts(),
+            $this->beast->getBeast(),
             $this->fish->getFish(),
             $this->bird->getBird());
     }
 
     /**
-     * @return array
+     * @param string $kingdom
+     * @return array|null
      */
+    public function searchAnimalKingdom(string $kingdom): ?array
+    {
+        foreach ($this->factory as $animal) {
+            foreach ($animal as $key => $value) {
+                if ($kingdom === $key) {
+                    return $value;
+                } elseif (empty($value)) {
+                    echo 'Царства не найдено';
+                }
+            }
+        }
+        return null;
+    }
+
+    public function searchAnimalParameters(?string $animalName = null, ?int $legs = null, ?int $fairy = null, ?int $wings = null): ?array
+    {
+        $foundAnimals = [];
+        foreach ($this->factory as $kingdom) {
+            foreach ($kingdom as $name => $data) {
+                foreach ($data as $key => $value) {
+                    if (
+                        ($animalName === null || $animalName === $key) &&
+                        ($legs === null || $legs === $data['Ног']) &&
+                        ($fairy === null || $fairy === $data['Хвостов']) &&
+                        ($wings === null || $wings === $data['Крыльев'])
+                    ) {
+                        $foundAnimals[$key] = $value;
+                    }
+                }
+            }
+        }
+        if (!empty($foundAnimals)) {
+            return $foundAnimals;
+        } else {
+            echo 'Ни одно животное не найдено';
+            return null;
+        }
+    }
+
+
     public function getFactory(): array
     {
         return $this->factory;
     }
 }
-
-$parampant = new ZooKeeper();
-$cat = new Beast();
-$dog = new Beast();
-$cat->setParamAnimal('Cat',4,1);
-$dog->setParamAnimal('Бобик', 4, 1);
-$fish = new Fish();
-$fish->setParamAnimal('Селедка', 1);
-$parampant->addAnimal($cat,'Звери');
-$parampant->addAnimal($dog,'Звери');
-$parampant->addAnimal($fish, 'Рыбы');
-print_r($parampant->getFactory());

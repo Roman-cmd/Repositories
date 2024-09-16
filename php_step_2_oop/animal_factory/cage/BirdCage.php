@@ -1,12 +1,12 @@
 <?php
 
 namespace AnimalFactory\cage;
+
 use AnimalFactory\animal\Bird;
-require_once('../../../vendor/autoload.php');
 
 class BirdCage extends Enclosure
 {
-
+    protected array $bird = [];
 
     public function __construct(string $kingdom = 'Птицы')
     {
